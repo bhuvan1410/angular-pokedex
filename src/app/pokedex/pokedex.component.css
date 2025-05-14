@@ -1,0 +1,121 @@
+body {
+  background-color: #A8A878;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.pokedex-header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.search-bar {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+.pokedex-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.pokemon-card {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-3px);
+}
+
+.pokemon-image {
+  width: 80px;
+  height: 80px;
+  margin-right: 1rem;
+}
+
+.pokemon-info {
+  flex-grow: 1;
+}
+
+.pokemon-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.pokemon-description {
+  font-style: italic;
+  color: #555;
+  margin: 0.3rem 0;
+}
+
+.pokemon-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.type-badge {
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.type-grass    { background-color: #78C850; }
+.type-poison   { background-color: #A040A0; }
+.type-fire     { background-color: #F08030; }
+.type-water    { background-color: #6890F0; }
+.type-bug      { background-color: #A8B820; }
+.type-normal   { background-color: #A8A878; }
+
+.pokemon-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 0.3rem;
+  display: inline-block;
+}
+
+.pokemon-link:hover {
+  text-decoration: underline;
+}
+
+.pagination-controls {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.pagination-controls button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

@@ -1,0 +1,32 @@
+<div class="pokedex-header">
+  <h1>Pokédex</h1>
+</div>
+
+<div class="pokedex-container">
+  <div *ngFor="let pokemon of paginatedPokedex" [id]="'pokemon-' + pokemon.id" class="pokemon-card">
+    <img [src]="pokemon.image" [alt]="pokemon.name" class="pokemon-image" />
+
+    <div class="pokemon-info">
+      <h2 class="pokemon-name">{{ pokemon.name | titlecase }}</h2>
+      <p class="pokemon-description">
+        {{ pokemon.description || 'This Pokémon is known for its unique traits and abilities.' }}
+      </p>
+
+      <div class="pokemon-types">
+        <span class="type-badge type-{{ type.toLowerCase() }}" *ngFor="let type of pokemon.type">
+          {{ type | uppercase }}
+        </span>
+      </div>
+
+      <a *ngIf="pokemon.evolvesTo" class="pokemon-link" [href]="'#pokemon-' + pokemon.evolvesTo.toLowerCase()">
+        Evolves to {{ pokemon.evolvesTo | titlecase }}
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="pagination-controls">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+</div>
