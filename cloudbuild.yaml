@@ -1,0 +1,14 @@
+steps:
+  - name: "node:18"
+    entrypoint: "npm"
+    args: ["install", "--force"]
+
+  - name: "node:18"
+    entrypoint: "npm"
+    args: ["run", "build", "--", "--configuration=production"]
+
+  - name: "gcr.io/cloud-builders/gcloud"
+    args: ["app", "deploy", "app.yaml"]
+
+options:
+  logging: CLOUD_LOGGING_ONLY
